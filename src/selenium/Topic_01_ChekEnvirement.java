@@ -23,6 +23,7 @@ public class Topic_01_ChekEnvirement {
 	public void TC_01_checkUrl() {			
 		String homePageUrl = driver.getCurrentUrl();		
 		Assert.assertEquals(homePageUrl,"http://live.guru99.com/");		
+		// Check notification Slack vs Github
 				
 	}			
 	@Test			
