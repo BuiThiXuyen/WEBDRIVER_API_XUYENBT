@@ -37,7 +37,7 @@ public class Topic_02_BaiTap01 {
   	  Assert.assertEquals(passRequired, "This is a required field.");
   	  //driver.quit();
   	}
-  
+ 
   	@Test
   	public void TC_02_Login_with_Email_invalid() {
   	driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -73,11 +73,29 @@ public class Topic_02_BaiTap01 {
     driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     driver.findElement(By.xpath("//input[@id='email']")).sendKeys("automation@gmail.com");
     driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123123123");
-    driver.findElement(By.xpath(".//*[@id='send2']")).click();
-    String passIncorrect=driver.findElement(By.xpath("//li[@class='error-msg']")).getText();
-    Assert.assertEquals(passIncorrect, "Invalid login or password.");
+    driver.findElement(By.xpath(".//*[@id='send2']")).click();    
+    String passIncorrect=  driver.findElement(By.xpath("//input[@id='email']/following-sibling::div[@class='validation-advice']")).getText();
+    Assert.assertEquals(passIncorrect,"Invalid login or password.");
   	}
   	
+  	@Test
+  	public void TC_05() {
+  	    driver.findElement(By.xpath("//img[@class='large']")).click(); 
+  	    driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account'][contains(text(),'My Account')]")).click();
+  		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
+  		driver.findElement(By.xpath("//input[@title='First Name']")).sendKeys("Hanh");
+  		driver.findElement(By.xpath("//input[@id='middlename']")).sendKeys("Hong");
+  		driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("Nguyen");
+  		driver.findElement(By.xpath("//input[@id='email_address']")).sendKeys("hihi22442@gmail.com");
+  		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
+  		driver.findElement(By.xpath("//input[@id='confirmation']")).sendKeys("123456");
+  		driver.findElement(By.xpath("//input[@id='is_subscribed']")).click();
+  		driver.findElement(By.xpath("//span[contains(text(),'Register')]")).click();
+  		String LoginRequired = driver.findElement(By.xpath("//span[contains(text(),'Thank you for registering with Main Website Store.')]")).getText();
+  	    Assert.assertEquals(LoginRequired, "Thank you for registering with Main Website Store.");
+  		driver.findElement(By.xpath("//span[@class='label'][contains(text(),'Account')]")).click();
+  		driver.findElement(By.xpath("//a[@title='Log Out']")).click();
+  	}
 
   @AfterClass
   public void afterClass() {
