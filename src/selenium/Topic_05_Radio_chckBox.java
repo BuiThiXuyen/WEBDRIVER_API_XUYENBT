@@ -30,7 +30,7 @@ public class Topic_05_Radio_chckBox {
   @Test (enabled = false)
   public void TC_00() {
 	//Step 01 - Truy cập vào trang: http://live.guru99.com/
-	driver.get("http://live.guru99.com/");
+	driver.get("http://live.guru99.com");
 	//Step 02 - Click vào link My Account dưới footer (dùng hàm click của Selenium)
 	WebElement footer_myaccount = driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']"));
 	footer_myaccount.click();
@@ -80,6 +80,7 @@ public class Topic_05_Radio_chckBox {
 		  btn_radio.click();
 	  }
   }
+  
   @Test (enabled = false)
   public void TC_03() throws Exception{
 	  //Step 01 - Truy cập vào trang: http://daominhdam.890m.com/
@@ -122,6 +123,7 @@ public class Topic_05_Radio_chckBox {
       WebElement result = driver.findElement(By.xpath(".//*[@id='result']"));
       AssertJUnit.assertEquals("You entered: daominhdam88",result.getText());
   }
+
   @AfterClass
   public void afterClass() {
 	  driver.quit();

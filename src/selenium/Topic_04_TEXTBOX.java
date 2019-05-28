@@ -45,7 +45,8 @@ public class Topic_04_TEXTBOX {
 		//open website
 		
 	}
-	@Test (enabled = false)
+	/*@Test (enabled = false)
+	
 	public void TC_01_Handle_Dropdown_list() {
 		driver.get("http://daominhdam.890m.com/");
 		Topic04_form_demo jobRole = new Topic04_form_demo(driver);
@@ -72,6 +73,7 @@ public class Topic_04_TEXTBOX {
 		Assert.assertEquals(actual_result,"Manual Tester");
 		Assert.assertEquals(jobRole.jobRole01(driver).getOptions().size(), 5);
 	}
+	*/
 	
 	@Test
 	public void TC_02_Handle_textBox_textArea() {
@@ -95,7 +97,7 @@ public class Topic_04_TEXTBOX {
 		driver.findElement(By.xpath("//input[@name='AccSubmit']")).click();
 		WebElement actual_cusname = driver.findElement(By.xpath("//input[@name ='name']"));
 		WebElement actual_address = driver.findElement(By.xpath("//textarea[@name ='addr']"));
-		Assert.assertEquals("Loc Nguyen", actual_cusname.getAttribute("Value"));
+		Assert.assertEquals("Xuyen Bui", actual_cusname.getAttribute("Value"));
 		Assert.assertEquals("Testing 123", actual_address.getText());
 		tempUser.editCity_Address(driver,actual_address);
 		WebElement newAddr = driver.findElement(By.xpath("//td[text()='Address']/following-sibling::td"));

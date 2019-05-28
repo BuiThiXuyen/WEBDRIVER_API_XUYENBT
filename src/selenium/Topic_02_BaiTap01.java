@@ -74,7 +74,7 @@ public class Topic_02_BaiTap01 {
     driver.findElement(By.xpath("//input[@id='email']")).sendKeys("automation@gmail.com");
     driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123123123");
     driver.findElement(By.xpath(".//*[@id='send2']")).click();    
-    String passIncorrect=  driver.findElement(By.xpath("//input[@id='email']/following-sibling::div[@class='validation-advice']")).getText();
+    String passIncorrect=  driver.findElement(By.xpath(".//*[@id='top']/body/div[1]/div/div[2]/div/div/div/ul/li/ul/li")).getText();
     Assert.assertEquals(passIncorrect,"Invalid login or password.");
   	}
   	
@@ -83,10 +83,10 @@ public class Topic_02_BaiTap01 {
   	    driver.findElement(By.xpath("//img[@class='large']")).click(); 
   	    driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account'][contains(text(),'My Account')]")).click();
   		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
-  		driver.findElement(By.xpath("//input[@title='First Name']")).sendKeys("Hanh");
-  		driver.findElement(By.xpath("//input[@id='middlename']")).sendKeys("Hong");
-  		driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("Nguyen");
-  		driver.findElement(By.xpath("//input[@id='email_address']")).sendKeys("hihi22442@gmail.com");
+  		driver.findElement(By.xpath("//input[@title='First Name']")).sendKeys("Xuyen");
+  		driver.findElement(By.xpath("//input[@id='middlename']")).sendKeys("Thi");
+  		driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("Bui");
+  		driver.findElement(By.xpath("//input[@id='email_address']")).sendKeys("btx@gmail.com");
   		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
   		driver.findElement(By.xpath("//input[@id='confirmation']")).sendKeys("123456");
   		driver.findElement(By.xpath("//input[@id='is_subscribed']")).click();
